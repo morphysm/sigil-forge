@@ -526,7 +526,7 @@ export default function App() {
                     opacity: 0.8
                   }}
                 >
-                  // {resonance.theme}
+                
                 </h3>
                 <div
                   style={{
@@ -621,7 +621,7 @@ export default function App() {
             opacity: 0.8
           }}
         >
-          // AOS METHODOLOGY • CHAOS PROTOCOL • FORGET TO REMEMBER //
+          {"// AOS METHODOLOGY • CHAOS PROTOCOL • FORGET TO REMEMBER //"}
         </div>
       </div>
     </div>
