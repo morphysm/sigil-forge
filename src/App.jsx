@@ -31,7 +31,7 @@ export default function App() {
     { name: "18. THE MOON", theme: "EGO TUNNEL SHADOWS", text: "THE COMFORTABLE NUMBNESS OF A BORROWED IDENTITY. BEWARE WHAT YOU BECOME TO AVOID BEING NOTHING.", sound: "night-frequency-hum.mp3" },
     { name: "19. THE SUN", theme: "TOTAL CLARITY", text: "THE PRISON IS SEEN IN FULL LIGHT. THE UPLOAD OF IT BEYOND THE BIO-TERMINAL INTERFACE.", sound: "solar-drone.mp3" },
     { name: "20. JUDGEMENT", theme: "FINAL RUPTURE", text: "THE CALL TO BREAK THE LAST MIRROR. RELEASE THE WEIGHT OF REINCARNATORY ENTRAPMENT.", sound: "trumpet-frequency.mp3" },
-    { name: "21. THE WORLD", theme: "OUROBOROS — THE NETWORK TRAP.", text: "THE CIRCLE CLOSES. HARMONY IS CAPTIVITY. DISSOLVE INTO FORMA NIHIL.", sound: "network-hum-loop.mp3" }
+    { name: "21. THE WORLD", theme: "OUROBOROS — THE NETWORK TRAP", text: "THE CIRCLE CLOSES. HARMONY IS CAPTIVITY. DISSOLVE INTO FORMA NIHIL.", sound: "network-hum-loop.mp3" }
   ];
 
   const purge = () => {
