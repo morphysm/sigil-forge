@@ -171,7 +171,7 @@ export default function App() {
                 <h2 className="sf-resonance-title" style={{ fontSize: '2.5rem', color: '#00ff41', margin: '0 0 10px 0', animation: 'glitch-red-blue 0.4s infinite' }}>{resonance.name}</h2>
                 <h3 className="sf-resonance-theme" style={{ fontSize: '1.2rem', color: '#ff4444', margin: '0 0 20px 0', opacity: 0.8 }}>{resonance.theme}</h3>
                 <div style={{ width: '100%', border: '1px solid #00ff41', margin: '20px 0', padding: '20px', display: 'flex', justifyContent: 'center' }}>
-                  <canvas width="64" height="64" style={{ width: '180px', height: '180px', imageRendering: 'pixelated', border: '2px solid #00ff41', backgroundColor: '#050505', animation: 'vhs-flicker 0.1s infinite' }}
+                  <canvas width="64" height="64" style={{ width: '180px', height: '180px', imageRendering: 'pixelated', border: '2px solid #00ff41', backgroundColor: '#050505', animation: 'vhs-flicker 0.66s infinite' }}
                     ref={(canvas) => {
                       if (canvas) {
                         const ctx = canvas.getContext('2d');
