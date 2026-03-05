@@ -117,7 +117,7 @@ export default function App() {
           }
           @keyframes screen-shake { 0% { transform: translate(0, 0); } 10% { transform: translate(-5px, 5px); } 20% { transform: translate(5px, -5px); } 100% { transform: translate(0, 0); } }
           @keyframes glitch-red-blue { 0% { text-shadow: 2px 0 #ff4444, -2px 0 #00ff41; } 100% { text-shadow: 0 0 0px transparent; } }
-          @keyframes vhs-flicker { 0% { opacity: 0.6; } 100% { opacity: 1; } }
+          @keyframes vhs-flicker { 0% { opacity: 0.66; } 100% { opacity: 1; } }
           @keyframes typewriter { from { opacity: 0; } to { opacity: 1; } }
         `}
       </style>
