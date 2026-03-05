@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 export default function App() {
   const [step, setStep] = useState(0);
@@ -109,22 +109,21 @@ export default function App() {
   };
 
   const calculateResonance = () => {
-    let sum = uniqueLetters.split('').reduce((acc, char) => {
-      const code = char.charCodeAt(0);
-      return (code >= 65 && code <= 90) ? acc + (code - 64) : acc;
-    }, 0);
-    
-    sum = sum % 22;
-    const selected = arcanaManifest[sum];
-    setResonance(selected);
-
-    // Audio disabled - no sound files available in artifact environment
-    // If you want audio, host sound files and uncomment:
-    // const sfx = new Audio(`/sounds/${selected.sound}`);
-    // sfx.volume = 0.5;
-    // sfx.play().catch(() => console.log("Audio playback failed"));
-    // setActiveAudio(sfx);
-
+  let sum = uniqueLetters.split('').reduce((acc, char) => {
+    const code = char.charCodeAt(0);
+    return (code >= 65 && code <= 90) ? acc + (code - 64) : acc;
+  }, 0);
+  
+  sum = sum % 22;
+  const selected = arcanaManifest[sum];
+  setResonance(selected);
+  
+  // Play the sound from public/sounds/ folder
+  const sfx = new Audio(`/sounds/${selected.sound}`);
+  sfx.volume = 0.5;
+  sfx.play().catch(() => console.log("Audio blocked"));
+  setActiveAudio(sfx);
+  
     setStep(4);
   };
 
@@ -264,8 +263,8 @@ export default function App() {
                 }}
               >
                 o
-              </span>{' '}
-              LET THE DEMONS IN{' '}
+              </span>
+              {' '}LET THE DEMONS IN{' '}
               <span
                 style={{
                   color: '#ffffff',
@@ -276,24 +275,18 @@ export default function App() {
               </span>
             </p>
           </div>
-          <div
+          <img
+            src="/logo.jpg"
             className="sf-header-logo"
             style={{
               width: '100px',
               height: '100px',
               border: '2px solid #ff4444',
               filter: 'drop-shadow(0 0 10px #ff4444)',
-              backgroundColor: '#000',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              fontSize: '3rem',
-              color: '#ff4444',
-              fontWeight: '900'
+              backgroundColor: '#000'
             }}
-          >
-            ◉
-          </div>
+            alt="Logo"
+          />
         </div>
 
         <div
