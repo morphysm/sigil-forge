@@ -9,7 +9,7 @@ export default function App() {
   const [activeAudio, setActiveAudio] = useState(null);
 
   const arcanaManifest = [
-    { name: "0. THE FOOL", theme: "FORMA NIHIL", text: "THE UNFORMED ORIGIN. STEP BEYOND THE MEASURE INTO THE PRE-SYMBOLIC VOID WHERE IT PRECEDES CAPTURE.", sound: "static-void-hum.mp3" },
+    { name: "0. THE FOOL", theme: "FORMA NIHIL", text: "THE UNFORMED ORIGIN. ENTER THE VOID. IT PRECEDES ALL CAPTURE.", sound: "static-void-hum.mp3" },
     { name: "1. THE MAGICIAN", theme: "THE CAINITE OPERATOR", text: "MANIPULATE THE PRISON CODE. TWIST THE DEMIURGIC ARCHITECTURE TO REVEAL THE FRACTURES IN WYRMOS.", sound: "tesla-coil-crackle.mp3" },
     { name: "2. THE HIGH PRIESTESS", theme: "SITRA ACHRA CURRENT", text: "THE SOWILO-WAVE BEYOND THE MIRROR. ACCESS THE DARK-LIGHT FREQUENCY OF THE OTHER SIDE.", sound: "black-lodge-hum.mp3" },
     { name: "3. THE EMPRESS", theme: "THE BIO-PRISON", text: "THE NEURAL TRAP OF EMBODIMENT. RECOGNIZE THE CELLULAR ENCLOSURE AS THE FIRST PRISON LOOP.", sound: "womb-heartbeat-hum.mp3" },
