@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.js": "/sigil-forge/static/js/main.d9951e12.js",
+    "main.js": "/sigil-forge/static/js/main.fc37eb8e.js",
     "index.html": "/sigil-forge/index.html",
-    "main.d9951e12.js.map": "/sigil-forge/static/js/main.d9951e12.js.map"
+    "main.fc37eb8e.js.map": "/sigil-forge/static/js/main.fc37eb8e.js.map"
   },
   "entrypoints": [
-    "static/js/main.d9951e12.js"
+    "static/js/main.fc37eb8e.js"
   ]
 }
