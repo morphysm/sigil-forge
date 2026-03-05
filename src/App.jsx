@@ -119,7 +119,7 @@ export default function App() {
   setResonance(selected);
   
   // Play the sound from public/sounds/ folder
-  const sfx = new Audio(`/sounds/${selected.sound}`);
+  const sfx = new Audio(`${process.env.PUBLIC_URL}/sounds/${selected.sound}`);
   sfx.volume = 0.5;
   sfx.play().catch(() => console.log("Audio blocked"));
   setActiveAudio(sfx);
@@ -275,8 +275,7 @@ export default function App() {
               </span>
             </p>
           </div>
-          <img
-            src="/logo.jpg"
+          <img src={`${process.env.PUBLIC_URL}/logo.jpg`}
             className="sf-header-logo"
             style={{
               width: '100px',
