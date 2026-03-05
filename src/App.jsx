@@ -33,7 +33,8 @@ export default function App() {
     { name: "20. JUDGEMENT", theme: "FINAL RUPTURE", text: "THE CALL TO BREAK THE LAST MIRROR. RELEASE THE WEIGHT OF REINCARNATORY ENTRAPMENT.", sound: "trumpet-frequency.mp3" },
     { name: "21. THE WORLD", theme: "OUROBOROS — THE NETWORK TRAP", text: "THE CIRCLE CLOSES. HARMONY IS CAPTIVITY. DISSOLVE INTO FORMA NIHIL.", sound: "network-hum-loop.mp3" }
   ];
-const purge = () => {
+
+  const purge = () => {
     if (activeAudio) activeAudio.pause();
     setIntent('');
     setUniqueLetters('');
@@ -84,7 +85,6 @@ const purge = () => {
       const code = char.charCodeAt(0);
       return (code >= 65 && code <= 90) ? acc + (code - 64) : acc;
     }, 0);
-    // Use modulo 22 to map sum into 0-21 range, making The Fool accessible
     sum = sum % 22;
     const selected = arcanaManifest[sum];
     setResonance(selected);
@@ -112,277 +112,53 @@ const purge = () => {
         justifyContent: 'center'
       }}
     >
-      {/* MOBILE-ONLY GLOBAL ADJUSTMENTS */}
       <style>
         {`
           @media (max-width: 768px) {
-            .sf-container {
-              padding: 16px !important;
-            }
-
-            .sf-header {
-              flex-direction: column !important;
-              align-items: flex-start !important;
-              gap: 16px !important;
-            }
-
-            .sf-header-title {
-              font-size: 2.4rem !important;
-              line-height: 1.1 !important;
-              word-break: break-word !important;
-            }
-
-            .sf-header-logo {
-              width: 72px !important;
-              height: 72px !important;
-            }
-
-            .sf-main-panel {
-              padding: 20px !important;
-            }
-
-            .sf-textarea {
-              height: 120px !important;
-              font-size: 1.1rem !important;
-              padding: 14px !important;
-            }
-
-            .sf-primary-btn,
-            .sf-secondary-btn,
-            .sf-full-btn {
-              padding: 16px !important;
-              font-size: 1rem !important;
-            }
-
-            .sf-flex-row {
-              flex-direction: column !important;
-            }
-
-            .sf-letters-display {
-              font-size: 2.6rem !important;
-              padding: 24px 8px !important;
-              word-break: break-word !important;
-            }
-
-            .sf-sigil-wrapper {
-              padding: 20px !important;
-            }
-
-            .sf-resonance-card {
-              padding: 24px !important;
-            }
-
-            .sf-resonance-title {
-              font-size: 1.8rem !important;
-              letter-spacing: 2px !important;
-            }
-
-            .sf-resonance-theme {
-              font-size: 1rem !important;
-            }
-
-            .sf-resonance-text {
-              font-size: 0.95rem !important;
-            }
-
-            .sf-footer {
-              padding: 0 16px;
-              font-size: 0.8rem !important;
-            }
+            .sf-container { padding: 16px !important; }
+            .sf-header { flex-direction: column !important; align-items: flex-start !important; gap: 16px !important; }
+            .sf-header-title { font-size: 2.4rem !important; line-height: 1.1 !important; word-break: break-word !important; }
+            .sf-header-logo { width: 72px !important; height: 72px !important; }
+            .sf-main-panel { padding: 20px !important; }
+            .sf-textarea { height: 120px !important; font-size: 1.1rem !important; padding: 14px !important; }
+            .sf-primary-btn, .sf-secondary-btn, .sf-full-btn { padding: 16px !important; font-size: 1rem !important; }
+            .sf-flex-row { flex-direction: column !important; }
+            .sf-letters-display { font-size: 2.6rem !important; padding: 24px 8px !important; word-break: break-word !important; }
+            .sf-sigil-wrapper { padding: 20px !important; }
+            .sf-resonance-card { padding: 24px !important; }
+            .sf-resonance-title { font-size: 1.8rem !important; letter-spacing: 2px !important; }
+            .sf-resonance-theme { font-size: 1rem !important; }
+            .sf-resonance-text { font-size: 0.95rem !important; }
+            .sf-footer { padding: 0 16px; font-size: 0.8rem !important; }
           }
         `}
       </style>
 
-      <div
-        className="sf-container"
-        style={{ width: '100%', maxWidth: '800px', padding: '20px' }}
-      >
-        <div
-          className="sf-header"
-          style={{
-            border: '3px solid #00ff41',
-            padding: '30px',
-            marginBottom: '40px',
-            display: 'flex',
-            justifyContent: 'space-between',
-            alignItems: 'center',
-            backgroundColor: '#050505'
-          }}
-        >
+      <div className="sf-container" style={{ width: '100%', maxWidth: '800px', padding: '20px' }}>
+        <div className="sf-header" style={{ border: '3px solid #00ff41', padding: '30px', marginBottom: '40px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', backgroundColor: '#050505' }}>
           <div>
-            <h1
-              className="sf-header-title"
-              style={{
-                fontSize: '3.5rem',
-                fontWeight: '900',
-                color: '#00ff41',
-                margin: 0,
-                letterSpacing: '2px',
-                textShadow: '3px 3px 0px #ff4444'
-              }}
-            >
-              SIGIL.FORGE
-            </h1>
-            <p
-              style={{
-                color: '#00ff41',
-                margin: '10px 0 0 0',
-                fontSize: '1rem',
-                fontWeight: 'bold'
-                
-              }}
-            >
-              A MORPHYSTIC SPARE SIMULATION v1.0
-            </p>
-            <p
-              style={{
-                 color: '#00ff41',
-    margin: '10px 0 0 0',
-    fontSize: '1rem',
-    fontWeight: 'bold',
-    whiteSpace: 'nowrap'
-              }}
-            >
-              <span
-                style={{
-      color: '#ffffff',
-      textShadow: '0 0 8px #00ff41, 0 0 16px #00ff41'
-                }}
-              >
-              o
-              </span>{' '}
-              LET THE DEMONS IN{' '}
-              <span
-                style={{
-      color: '#ffffff',
-      textShadow: '0 0 8px #00ff41, 0 0 16px #00ff41'
-                }}
-              >
-                o
-              </span>
-            </p>
+            <h1 className="sf-header-title" style={{ fontSize: '3.5rem', fontWeight: '900', color: '#00ff41', margin: 0, letterSpacing: '2px', textShadow: '3px 3px 0px #ff4444' }}>SIGIL.FORGE</h1>
+            <p style={{ color: '#00ff41', margin: '10px 0 0 0', fontSize: '1rem', fontWeight: 'bold' }}>A MORPHYSTIC SPARE SIMULATION v1.0</p>
           </div>
-          <img
-            src="/logo.jpg"
-            className="sf-header-logo"
-            style={{
-              width: '100px',
-              height: '100px',
-              border: '2px solid #ff4444',
-              filter: 'drop-shadow(0 0 10px #ff4444)',
-              backgroundColor: '#000'
-            }}
-            alt="Logo"
-          />
+          <img src="/logo.jpg" className="sf-header-logo" style={{ width: '100px', height: '100px', border: '2px solid #ff4444', filter: 'drop-shadow(0 0 10px #ff4444)', backgroundColor: '#000' }} alt="Logo" />
         </div>
 
-        <div
-          className="sf-main-panel"
-          style={{ border: '2px solid #ff4444', padding: '40px', backgroundColor: '#050505' }}
-        >
+        <div className="sf-main-panel" style={{ border: '2px solid #ff4444', padding: '40px', backgroundColor: '#050505' }}>
           {step === 0 && (
             <div style={{ display: 'flex', flexDirection: 'column', gap: '30px' }}>
               <p style={{ color: '#ff4444', margin: 0 }}>{`> INITIALIZE INTENT SEED:`}</p>
-              <textarea
-                className="sf-textarea"
-                style={{
-                  width: '100%',
-                  height: '150px',
-                  backgroundColor: '#000',
-                  border: '1px solid #ff4444',
-                  padding: '20px',
-                  color: '#00ff41',
-                  fontSize: '1.5rem',
-                  outline: 'none',
-                  resize: 'none',
-                  caretColor: '#ff4444'
-                }}
-                value={intent}
-                onChange={(e) => setIntent(e.target.value)}
-                placeholder="ENTER_INTENT_"
-              />
-              <button
-                onClick={processIntent}
-                className="sf-full-btn"
-                style={{
-                  width: '100%',
-                  padding: '20px',
-                  backgroundColor: 'transparent',
-                  color: '#00ff41',
-                  border: '2px solid #00ff41',
-                  fontWeight: '900',
-                  fontSize: '1.2rem',
-                  cursor: 'pointer'
-                }}
-              >
-                [ EXECUTE.REDUCTION ]
-              </button>
+              <textarea className="sf-textarea" style={{ width: '100%', height: '150px', backgroundColor: '#000', border: '1px solid #ff4444', padding: '20px', color: '#00ff41', fontSize: '1.5rem', outline: 'none', resize: 'none', caretColor: '#ff4444' }} value={intent} onChange={(e) => setIntent(e.target.value)} placeholder="ENTER_INTENT_" />
+              <button onClick={processIntent} className="sf-full-btn" style={{ width: '100%', padding: '20px', backgroundColor: 'transparent', color: '#00ff41', border: '2px solid #00ff41', fontWeight: '900', fontSize: '1.2rem', cursor: 'pointer' }}>[ EXECUTE.REDUCTION ]</button>
             </div>
           )}
 
           {step === 1 && (
             <div style={{ textAlign: 'center' }}>
-              <p
-                style={{
-                  color: '#ff4444',
-                  marginBottom: '20px',
-                  textAlign: 'left'
-                }}
-              >
-                {`> REDUCED CORE ELEMENTS:`}
-              </p>
-              <div
-                className="sf-letters-display"
-                style={{
-                  fontSize: uniqueLetters.length > 10 ? '3rem' : '5rem',
-                  color: '#ff4444',
-                  fontWeight: '900',
-                  padding: '40px 0',
-                  marginBottom: '40px',
-                  border: '1px solid #ff4444',
-                  backgroundColor: '#000',
-                  letterSpacing: '5px',
-                  wordBreak: 'break-all'
-                }}
-              >
-                {uniqueLetters}
-              </div>
+              <p style={{ color: '#ff4444', marginBottom: '20px', textAlign: 'left' }}>{`> REDUCED CORE ELEMENTS:`}</p>
+              <div className="sf-letters-display" style={{ fontSize: uniqueLetters.length > 10 ? '3rem' : '5rem', color: '#ff4444', fontWeight: '900', padding: '40px 0', marginBottom: '40px', border: '1px solid #ff4444', backgroundColor: '#000', letterSpacing: '5px', wordBreak: 'break-all' }}>{uniqueLetters}</div>
               <div className="sf-flex-row" style={{ display: 'flex', gap: '20px' }}>
-                <button
-                  onClick={createSigil}
-                  className="sf-primary-btn"
-                  style={{
-                    flex: 2,
-                    padding: '25px',
-                    backgroundColor: '#ff4444',
-                    color: '#000',
-                    fontWeight: '900',
-                    fontSize: '1.5rem',
-                    border: 'none',
-                    cursor: 'pointer',
-                    animation: 'button-pulse 2s infinite ease-in-out'
-                  }}
-                >
-                  <style>
-                    {`@keyframes button-pulse { 0% { box-shadow: 0 0 15px rgba(255, 68, 68, 0.4); transform: scale(1); } 50% { box-shadow: 0 0 35px rgba(255, 68, 68, 0.8); transform: scale(1.02); } 100% { box-shadow: 0 0 15px rgba(255, 68, 68, 0.4); transform: scale(1); } }`}
-                  </style>
-                  [ FORGE SIGIL ]
-                </button>
-                <button
-                  onClick={purge}
-                  className="sf-secondary-btn"
-                  style={{
-                    flex: 1,
-                    padding: '25px',
-                    border: '1px solid #00ff41',
-                    color: '#00ff41',
-                    backgroundColor: 'transparent',
-                    fontWeight: '900',
-                    cursor: 'pointer'
-                  }}
-                >
-                  CANCEL
-                </button>
+                <button onClick={createSigil} className="sf-primary-btn" style={{ flex: 2, padding: '25px', backgroundColor: '#ff4444', color: '#000', fontWeight: '900', fontSize: '1.5rem', border: 'none', cursor: 'pointer' }}>[ FORGE SIGIL ]</button>
+                <button onClick={purge} className="sf-secondary-btn" style={{ flex: 1, padding: '25px', border: '1px solid #00ff41', color: '#00ff41', backgroundColor: 'transparent', fontWeight: '900', cursor: 'pointer' }}>CANCEL</button>
               </div>
             </div>
           )}
@@ -390,179 +166,41 @@ const purge = () => {
           {step === 3 && (
             <div>
               <p style={{ color: '#ff4444', marginBottom: '20px' }}>{`> YOUR SIGIL HAS BEEN FORGED:`}</p>
-              <div
-                className="sf-sigil-wrapper"
-                style={{
-                  border: '1px solid #ff4444',
-                  backgroundColor: '#000',
-                  padding: '40px',
-                  marginBottom: '30px',
-                  display: 'flex',
-                  justifyContent: 'center'
-                }}
-              >
-                <img
-                  src={sigil}
-                  alt="sigil"
-                  style={{
-                    maxWidth: '100%',
-                    height: 'auto',
-                    display: 'block',
-                    animation: 'sigil-glow 3s infinite ease-in-out',
-                    border: '1px solid rgba(255, 68, 68, 0.2)'
-                  }}
-                />
-                <style>
-                  {`@keyframes sigil-glow { 0% { filter: drop-shadow(0 0 5px #ff4444); transform: scale(1); } 50% { filter: drop-shadow(0 0 25px #ff4444); transform: scale(1.01); } 100% { filter: drop-shadow(0 0 5px #ff4444); transform: scale(1); } }`}
-                </style>
+              <div className="sf-sigil-wrapper" style={{ border: '1px solid #ff4444', backgroundColor: '#000', padding: '40px', marginBottom: '30px', display: 'flex', justifyContent: 'center' }}>
+                <img src={sigil} alt="sigil" style={{ maxWidth: '100%', height: 'auto', display: 'block', border: '1px solid rgba(255, 68, 68, 0.2)' }} />
               </div>
               <div style={{ display: 'flex', gap: '20px', flexDirection: 'column' }}>
-                <button
-                  onClick={calculateResonance}
-                  className="sf-full-btn"
-                  style={{
-                    width: '100%',
-                    padding: '25px',
-                    backgroundColor: '#00ff41',
-                    color: '#000',
-                    fontWeight: '900',
-                    fontSize: '1.2rem',
-                    border: 'none',
-                    cursor: 'pointer'
-                  }}
-                >
-                  [ ANALYZE.RESONANCE ]
-                </button>
+                <button onClick={calculateResonance} className="sf-full-btn" style={{ width: '100%', padding: '25px', backgroundColor: '#00ff41', color: '#000', fontWeight: '900', fontSize: '1.2rem', border: 'none', cursor: 'pointer' }}>[ ANALYZE.RESONANCE ]</button>
                 <div className="sf-flex-row" style={{ display: 'flex', gap: '20px' }}>
-                  <button
-                    onClick={() => {
-                      const a = document.createElement('a');
-                      a.href = sigil;
-                      a.download = 'sigil.png';
-                      a.click();
-                    }}
-                    className="sf-secondary-btn"
-                    style={{
-                      flex: 1,
-                      padding: '25px',
-                      border: '1px solid #ff4444',
-                      color: '#ff4444',
-                      backgroundColor: 'transparent',
-                      fontWeight: '900',
-                      fontSize: '1.2rem',
-                      cursor: 'pointer'
-                    }}
-                  >
-                    [ DOWNLOAD ]
-                  </button>
-                  <button
-                    onClick={purge}
-                    className="sf-secondary-btn"
-                    style={{
-                      flex: 1,
-                      padding: '25px',
-                      border: '2px solid #00ff41',
-                      color: '#00ff41',
-                      backgroundColor: 'transparent',
-                      fontWeight: '900',
-                      cursor: 'pointer'
-                    }}
-                  >
-                    [ FORGE NEW ]
-                  </button>
+                  <button onClick={purge} className="sf-secondary-btn" style={{ flex: 1, padding: '25px', border: '2px solid #00ff41', color: '#00ff41', backgroundColor: 'transparent', fontWeight: '900', cursor: 'pointer' }}>[ FORGE NEW ]</button>
                 </div>
               </div>
             </div>
           )}
 
           {step === 4 && resonance && (
-            <div
-              style={{
-                textAlign: 'center',
-                animation: 'screen-shake 0.5s ease-out both'
-              }}
-            >
-              <style>
-                {`
-                  @keyframes screen-shake { 0% { transform: translate(0, 0) scale(1); filter: hue-rotate(0deg); } 10% { transform: translate(-5px, 5px) scale(1.02); filter: hue-rotate(90deg); } 20% { transform: translate(5px, -5px) scale(1.01); filter: hue-rotate(-90deg); } 30% { transform: translate(-5px, -2px) scale(1.02); } 40% { transform: translate(2px, 2px) scale(1); } 50% { transform: translate(-1px, -1px) scale(1); filter: hue-rotate(0deg); } 100% { transform: translate(0, 0); } }
-                  @keyframes glitch-red-blue { 0% { text-shadow: 2px 0 #ff4444, -2px 0 #00ff41; } 20% { text-shadow: -3px 0 #ff4444, 3px 0 #00ff41; } 40% { text-shadow: 2px 0 #ff4444, -2px 0 #00ff41; } 100% { text-shadow: 0 0 0px transparent; } }
-                  @keyframes vhs-flicker { 0% { opacity: 0.6; filter: brightness(0.9); } 5% { opacity: 1; filter: brightness(1.5); } 10% { opacity: 0.15; } 100% { opacity: 0.65; filter: brightness(0.85); } }
-                  @keyframes typewriter { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
-                  @keyframes scanline-travel { 0% { top: -100%; } 100% { top: 100%; } }
-                `}
-              </style>
-              <p style={{ color: '#00ff41', marginBottom: '10px', fontSize: '1.2rem' }}>
-                {`// RESONANCE_ESTABLISHED`}
-              </p>
-              <div
-                className="sf-resonance-card"
-                style={{
-                  border: '2px solid #00ff41',
-                  padding: '40px',
-                  backgroundColor: '#000',
-                  marginBottom: '30px',
-                  boxShadow: '0 0 20px rgba(0, 255, 65, 0.2)'
-                }}
-              >
-                <h2
-                  className="sf-resonance-title"
-                  style={{
-                    fontSize: '2.5rem',
-                    color: '#00ff41',
-                    margin: '0 0 10px 0',
-                    letterSpacing: '4px',
-                    animation: 'glitch-red-blue 0.4s ease-out 2'
-                  }}
-                >
-                  {resonance.name}
-                </h2>
-                <h3
-                  className="sf-resonance-theme"
-                  style={{
-                    fontSize: '1.2rem',
-                    color: '#ff4444',
-                    margin: '0 0 20px 0',
-                    opacity: 0.8
-                  }}
-                >
+            <div style={{ textAlign: 'center' }}>
+              <p style={{ color: '#00ff41', marginBottom: '10px', fontSize: '1.2rem' }}>{`// RESONANCE_ESTABLISHED`}</p>
+              <div className="sf-resonance-card" style={{ border: '2px solid #00ff41', padding: '40px', backgroundColor: '#000', marginBottom: '30px', boxShadow: '0 0 20px rgba(0, 255, 65, 0.2)' }}>
+                <h2 className="sf-resonance-title" style={{ fontSize: '2.5rem', color: '#00ff41', margin: '0 0 10px 0', letterSpacing: '4px' }}>{resonance.name}</h2>
                 
+                {/* RESTORED THEME DISPLAY BELOW */}
+                <h3 className="sf-resonance-theme" style={{ fontSize: '1.2rem', color: '#ff4444', margin: '0 0 20px 0', opacity: 0.8, letterSpacing: '1px' }}>
+                  {resonance.theme}
                 </h3>
-                <div
-                  style={{
-                    width: '100%',
-                    border: '1px solid #00ff41',
-                    margin: '20px 0',
-                    backgroundColor: '#000',
-                    padding: '20px',
-                    display: 'flex',
-                    justifyContent: 'center',
-                    position: 'relative',
-                    overflow: 'hidden'
-                  }}
-                >
-                  <canvas
+                
+                <div style={{ width: '100%', border: '1px solid #00ff41', margin: '20px 0', backgroundColor: '#000', padding: '20px', display: 'flex', justifyContent: 'center' }}>
+                   <canvas
                     width="64"
                     height="64"
-                    style={{
-                      position: 'relative',
-                      width: '180px',
-                      height: '180px',
-                      imageRendering: 'pixelated',
-                      border: '2px solid #00ff41',
-                      backgroundColor: '#050505',
-                      animation: 'vhs-flicker 0.66s infinite alternate',
-                      filter:
-                        'contrast(1.9) brightness(1.2) drop-shadow(0 0 5px rgba(0, 255, 65, 0.5))'
-                    }}
+                    style={{ width: '180px', height: '180px', imageRendering: 'pixelated', border: '2px solid #00ff41', backgroundColor: '#050505' }}
                     ref={(canvas) => {
                       if (canvas) {
                         const ctx = canvas.getContext('2d');
                         ctx.clearRect(0, 0, 64, 64);
                         const seedValue = intent.length;
                         ctx.fillStyle = "#de0a18ef";
-                        const cardIndex = arcanaManifest.findIndex(
-                          (c) => c.name === resonance.name
-                        );
+                        const cardIndex = arcanaManifest.findIndex((c) => c.name === resonance.name);
                         for (let x = 0; x < 32; x += 4) {
                           for (let y = 0; y < 64; y += 4) {
                             const noise = Math.sin(x * cardIndex + y * seedValue);
@@ -572,56 +210,18 @@ const purge = () => {
                             }
                           }
                         }
-                        ctx.fillStyle = "rgba(0, 0, 0, 0.03)";
-                        for (let i = 0; i < 64; i += 2) ctx.fillRect(0, i, 64, 1);
                       }
                     }}
                   />
                 </div>
-                <p
-                  className="sf-resonance-text"
-                  style={{
-                    color: '#f5f1f1',
-                    fontSize: '1.1rem',
-                    lineHeight: '1.6',
-                    fontStyle: 'book',
-                    animation: 'typewriter 2s ease-out forwards'
-                  }}
-                >
-                  "{resonance.text}"
-                </p>
+                <p className="sf-resonance-text" style={{ color: '#f5f1f1', fontSize: '1.1rem', lineHeight: '1.6', fontStyle: 'italic' }}>"{resonance.text}"</p>
               </div>
-              <button
-                onClick={purge}
-                className="sf-full-btn"
-                style={{
-                  width: '100%',
-                  padding: '25px',
-                  border: '2px solid #ff4444',
-                  color: '#ff4444',
-                  backgroundColor: 'transparent',
-                  fontWeight: '900',
-                  cursor: 'pointer'
-                }}
-              >
-                [ RETURN TO VOID ]
-              </button>
+              <button onClick={purge} className="sf-full-btn" style={{ width: '100%', padding: '25px', border: '2px solid #ff4444', color: '#ff4444', backgroundColor: 'transparent', fontWeight: '900', cursor: 'pointer' }}>[ RETURN TO VOID ]</button>
             </div>
           )}
         </div>
 
-       <div
-          className="sf-footer"
-          style={{
-            marginTop: '40px',
-            textAlign: 'center',
-            fontSize: '0.9rem',
-            color: '#00ff41',
-            opacity: 0.8
-          }}
-        >
-          {"// AOS METHODOLOGY • CHAOS PROTOCOL • FORGET TO REMEMBER //"}
-        </div>
+        <div className="sf-footer" style={{ marginTop: '40px', textAlign: 'center', fontSize: '0.9rem', color: '#00ff41', opacity: 0.8 }}>{"// AOS METHODOLOGY • CHAOS PROTOCOL • FORGET TO REMEMBER //"}</div>
       </div>
     </div>
   );
