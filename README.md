@@ -48,9 +48,9 @@ Each Major Arcana card includes an associated ambient sound file (e.g., `tesla-c
 The traditional tarot has been recontextualized through Morphystic philosophy:
 
 - **THE FOOL** → Forma Nihil (The unformed, pre-symbolic state)
-- **WHEEL OF FORTUNE** → Recursive Captivity (Cyclical entrapment)
-- **THE TOWER** → Symbolic Collapse (Breaking of constructed reality)
-- **THE WORLD** → The Network Trap (Total enclosure)
+- **WHEEL OF FORTUNE** → Endless Repetition (Cyclical entrapment)
+- **THE TOWER** → Annihilation Of Structures (Breaking of constructed reality)
+- **THE WORLD** → Ouroboros — The Network Trap (Total enclosure)
 
 Full interpretations appear during the Resonance Analysis phase.
 
