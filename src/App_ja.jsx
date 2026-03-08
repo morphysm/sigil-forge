@@ -681,7 +681,7 @@ export default function App() {
             letterSpacing: '1px'
           }}
         >
-          {'// AOSメソドロジー • カオス・プロトコル • 忘れることで思い出す //'}
+          {'// AOSメソドロジー • カオス・プロトコル • 忘れるために記憶せよ //'}
         </div>
       </div>
     </div>
